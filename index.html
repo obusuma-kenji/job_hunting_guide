@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>就活生の親ができる「会社の選び方」総合レポート</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #3b82f6;
+      --success-color: #059669;
+      --warning-color: #d97706;
+      --danger-color: #dc2626;
+      
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      
+      --text-primary: var(--gray-900);
+      --text-secondary: var(--gray-700);
+      --text-muted: var(--gray-500);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
+      line-height: 1.8;
+      color: var(--text-primary);
+      background: #ffffff;
+      font-size: 14px;
+    }
+
+    .report-container {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: white;
+      min-height: 100vh;
+    }
+
+    /* 表紙 */
+    .cover-page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+      color: white;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-page::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(1deg); }
+    }
+
+    .cover-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 2;
+      position: relative;
+    }
+
+    .cover-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+      z-index: 2;
+      position: relative;
+    }
+
+    .cover-info {
+      z-index: 2;
+      position: relative;
+    }
+
+    .cover-date {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover-version {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* レポート本文 */
+    .report-content {
+      padding: 2cm;
+      line-height: 1.8;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* 見出し */
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 2rem 0 1rem;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin: 1.8rem 0 1rem;
+      border-left: 5px solid var(--primary-color);
+      padding-left: 1rem;
+      background: var(--gray-50);
+      padding: 0.8rem 0 0.8rem 1rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin: 1rem 0 0.5rem;
+    }
+
+    /* パラグラフとリスト */
+    p {
+      margin: 0.8rem 0;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin: 1rem 0 1rem 2rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    /* 表 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid var(--gray-300);
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--primary-color);
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: var(--gray-50);
+    }
+
+    /* ボックス要素 */
+    .summary-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid var(--primary-color);
+    }
+
+    .key-points {
+      background: #f0fdf4;
+      border: 1px solid var(--success-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid var(--success-color);
+    }
+
+    .warning-box {
+      background: #fffbeb;
+      border: 1px solid var(--warning-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid var(--warning-color);
+    }
+
+    .checklist {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .checklist h4 {
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+
+    /* 統計・データ表示 */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      background: var(--gray-50);
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* フローチャート風レイアウト */
+    .process-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      justify-content: space-between;
+    }
+
+    .process-step {
+      flex: 1;
+      min-width: 200px;
+      background: white;
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .process-step::after {
+      content: '→';
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .process-step:last-child::after {
+      display: none;
+    }
+
+    .step-number {
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.5rem;
+      font-weight: bold;
+    }
+
+    /* 印刷対応 */
+    @media print {
+      body {
+        font-size: 12px;
+      }
+      
+      .report-container {
+        max-width: none;
+        margin: 0;
+      }
+      
+      .page-break {
+        page-break-before: always;
+      }
+      
+      .cover-page {
+        height: 100vh;
+      }
+      
+      .process-flow {
+        flex-direction: column;
+      }
+      
+      .process-step::after {
+        content: '↓';
+        right: 50%;
+        top: auto;
+        bottom: -1rem;
+        transform: translateX(50%);
+      }
+    }
+
+    /* 目次スタイル */
+    .toc {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px dotted var(--gray-300);
+    }
+
+    .toc-item:last-child {
+      border-bottom: none;
+    }
+
+    .toc-title {
+      font-weight: 500;
+    }
+
+    .toc-page {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* 強調表示 */
+    .highlight {
+      background: #fef3c7;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    em {
+      color: var(--secondary-color);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    code {
+      background: var(--gray-100);
+      color: var(--text-primary);
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="report-container">
+    <!-- 表紙 -->
+    <div class="cover-page">
+      <h1 class="cover-title">就活ガイド</h1>
+      <p class="cover-subtitle">親ができる「会社の選び方」総合レポート</p>
+      <div class="cover-info">
+        <p class="cover-date">2025年8月</p>
+        <p class="cover-version">Version 1.0</p>
+      </div>
+    </div>
+
+    <!-- 目次 -->
+    <div class="report-content page-break">
+      <h1>目次</h1>
+      <div class="toc">
+        <div class="toc-item">
+          <span class="toc-title">エグゼクティブサマリー</span>
+          <span class="toc-page">3</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">1. 会社選びの重要性と親の役割</span>
+          <span class="toc-page">4</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">2. 就活準備段階での取り組み</span>
+          <span class="toc-page">5</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">3. 会社選択の8つの評価軸</span>
+          <span class="toc-page">6</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">4. 情報収集の手法と質問例</span>
+          <span class="toc-page">8</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">5. 志望企業決定後の準備項目</span>
+          <span class="toc-page">10</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">6. 親子協働の進め方</span>
+          <span class="toc-page">11</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">7. よくある課題と対応策</span>
+          <span class="toc-page">12</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-title">付録：実践ツールとテンプレート</span>
+          <span class="toc-page">13</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- エグゼクティブサマリー -->
+    <div class="report-content page-break">
+      <h1>エグゼクティブサマリー</h1>
+      
+      <div class="summary-box">
+        <h3>本レポートの目的</h3>
+        <p>就活生の親が子どもの会社選びをどのようにサポートすべきかについて、構造化されたガイドラインを提供する。親は決定者ではなく、<strong>意思決定の質を向上させる伴走者</strong>としての役割を担うことを基本方針とする。</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-label">評価軸</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10</span>
+          <span class="stat-label">OB/OG質問例</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">事前準備項目</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">よくある不安</span>
+        </div>
+      </div>
+
+      <div class="key-points">
+        <h4>重要なポイント</h4>
+        <ul>
+          <li>最初の会社は職業観・学び方・人間関係の土台を形成する</li>
+          <li>「行きたい会社がない」状態からのスタートで問題ない</li>
+          <li>偏差値や知名度だけでなく、8つの軸で多面的に評価する</li>
+          <li>一次情報（公式資料、OB/OG訪問）を重視する</li>
+          <li>親は週1回30分の伴走ミーティングでサポートする</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 1. 会社選びの重要性と親の役割 -->
+    <div class="report-content page-break">
+      <h1>1. 会社選びの重要性と親の役割</h1>
+
+      <h2>1.1 新卒入社の重要性</h2>
+      <p>新卒で入社する最初の会社は、単なる就職先以上の意味を持つ。以下の3つの側面で、その後のキャリア形成に長期的な影響を与える：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>影響領域</th>
+            <th>具体的な内容</th>
+            <th>長期的影響</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>職業観形成</strong></td>
+            <td>仕事に対する価値観、働き方の基準</td>
+            <td>転職時の判断基準、キャリア戦略</td>
+          </tr>
+          <tr>
+            <td><strong>学習方法</strong></td>
+            <td>専門スキル習得、問題解決アプローチ</td>
+            <td>継続的な自己成長、適応力</td>
+          </tr>
+          <tr>
+            <td><strong>人間関係</strong></td>
+            <td>コミュニケーション様式、チームワーク</td>
+            <td>ネットワーク構築、リーダーシップ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>1.2 親の適切な役割</h2>
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h4>情報収集支援</h4>
+          <p>一緒に業界研究、企業情報の整理</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h4>選択肢の可視化</h4>
+          <p>比較軸の提示、判断材料の整理</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h4>意思決定サポート</h4>
+          <p>本人の判断を尊重しつつ助言</p>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <h4>⚠️ 避けるべき行動</h4>
+        <ul>
+          <li>親の価値観や経験を一方的に押し付ける</li>
+          <li>子どもに代わって企業に連絡を取る</li>
+          <li>内定辞退や入社の最終決定を親が行う</li>
+          <li>親の人脈だけで就職先を決める</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. 就活準備段階での取り組み -->
+    <div class="report-content page-break">
+      <h1>2. 就活準備段階での取り組み</h1>
+
+      <h2>2.1 「行きたい会社がない」からのスタート</h2>
+      <p>大半の学生は明確な志望業界・職種を持たずに就活を開始する。これは自然な状態であり、焦る必要はない。重要なのは「可能性を広げる → 絞る」というプロセスを体系的に進めることである。</p>
+
+      <h2>2.2 自己分析と価値観の明確化</h2>
+      
+      <div class="checklist">
+        <h4>📋 棚卸しチェックリスト</h4>
+        <ul>
+          <li>学業で楽しかった/頑張れた場面の書き出し</li>
+          <li>部活動・サークルでの役割と学び</li>
+          <li>アルバイト経験での気づき</li>
+          <li>各経験について「なぜ頑張れたか」をWHY×3で深掘り</li>
+        </ul>
+      </div>
+
+      <h3>価値観の可視化手法</h3>
+      <p>以下の要素について10段階で自己評価し、重要度ランキングを作成する：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>評価項目</th>
+            <th>説明</th>
+            <th>評価スケール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>報酬重視度</td>
+            <td>給与・賞与・福利厚生の重要性</td>
+            <td>1（重視しない）〜 10（最重要）</td>
+          </tr>
+          <tr>
+            <td>裁量・自由度</td>
+            <td>仕事の進め方、時間配分の自主性</td>
+            <td>1（指示待ち志向）〜 10（自律志向）</td>
+          </tr>
+          <tr>
+            <td>安定性</td>
+            <td>雇用・収入の安定、リスク許容度</td>
+            <td>1（変化志向）〜 10（安定志向）</td>
+          </tr>
+          <tr>
+            <td>社会貢献</td>
+            <td>社会的意義、やりがいの重要性</td>
+            <td>1（個人重視）〜 10（社会重視）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2.3 業界・職種の理解促進</h2>
+      
+      <div class="key-points">
+        <h4>🎯 効果的な業界研究アプローチ</h4>
+        <ul>
+          <li><strong>顧客軸での分類</strong>：B2B（企業向け）、B2C（消費者向け）、Gov（行政向け）</li>
+          <li><strong>収益モデルの理解</strong>：製造、課金、広告、サブスクリプション</li>
+          <li><strong>業界地図の活用</strong>：視覚的に業界全体を把握</li>
+          <li><strong>成長性と安定性</strong>：市場規模の変化、景気耐性</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. 会社選択の8つの評価軸 -->
+    <div class="report-content page-break">
+      <h1>3. 会社選択の8つの評価軸</h1>
+
+      <p>企業選択において、偏差値や知名度だけに頼らず、以下の8つの軸で多面的に評価することが重要である。</p>
+
+      <h2>3.1 評価軸の詳細解説</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>評価軸</th>
+            <th>確認項目</th>
+            <th>情報源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>①事業の解像度</strong></td>
+            <td>何を・誰に・どう稼ぐか</td>
+            <td>IR資料、統合報告書</td>
+          </tr>
+          <tr>
+            <td><strong>②市場性・成長耐性</strong></td>
+            <td>市場伸び・景気耐性</td>
+            <td>業界レポート、決算説明資料</td>
+          </tr>
+          <tr>
+            <td><strong>③育成・評価・配属</strong></td>
+            <td>透明性・公平性</td>
+            <td>採用サイト、OB/OG訪問</td>
+          </tr>
+          <tr>
+            <td><strong>④学びとキャリア</strong></td>
+            <td>伸びしろ・成長機会</td>
+            <td>研修制度、昇進実例</td>
+          </tr>
+          <tr>
+            <td><strong>⑤働き方・健康</strong></td>
+            <td>労働時間・離職率・対策</td>
+            <td>働き方改革レポート</td>
+          </tr>
+          <tr>
+            <td><strong>⑥総合報酬</strong></td>
+            <td>初任給＋賞与＋手当＋退職金</td>
+            <td>募集要項、口コミサイト</td>
+          </tr>
+          <tr>
+            <td><strong>⑦倫理・多様性</strong></td>
+            <td>コンプラ・DEI</td>
+            <td>サステナビリティレポート</td>
+          </tr>
+          <tr>
+            <td><strong>⑧立地・生活設計</strong></td>
+            <td>勤務地・転勤・家賃相場</td>
+            <td>勤務地情報、生活費試算</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3.2 危険信号（レッドフラッグ）と良好信号（グリーンフラッグ）</h2>
+
+      <div class="warning-box">
+        <h4>🚩 レッドフラッグ（要注意事項）</h4>
+        <ul>
+          <li>みなし残業代の比率が高いのに説明が曖昧</li>
+          <li>離職率や平均勤続年数を非開示</li>
+          <li>過去の不祥事への学びや改善策の言及がない</li>
+          <li>評価基準や昇進ルートが不明確</li>
+          <li>OB/OG訪問で一貫して否定的な反応</li>
+        </ul>
+      </div>
+
+      <div class="key-points">
+        <h4>✅ グリーンフラッグ（良好指標）</h4>
+        <ul>
+          <li>配属・評価基準が明文化されている</li>
+          <li>新人成長指標やキャリアパスが公開されている</li>
+          <li>経営陣が顧客視点で事業を語っている</li>
+          <li>多様な働き方を実際に選択可能</li>
+          <li>失敗やリスクについても率直に説明する</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. 情報収集の手法と質問例 -->
+    <div class="report-content page-break">
+      <h1>4. 情報収集の手法と質問例</h1>
+
+      <h2>4.1 一次情報の重要性</h2>
+      <p>信頼性の高い企業理解のためには、一次情報を厚く取ることが不可欠である。口コミサイトは補助的な傾向確認にとどめ、以下の情報源を優先する：</p>
+
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h4>公式情報</h4>
+          <p>公式サイト・IR・統合報告書・説明会</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h4>直接対話</h4>
+          <p>OB/OG訪問・インターン・座談会</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h4>第三者評価</h4>
+          <p>業界レポート・メディア取材・口コミ</p>
+        </div>
+      </div>
+
+      <h2>4.2 OB/OG訪問の戦略的質問10選</h2>
+      <p>限られた時間で最大の情報を得るため、以下の質問を優先的に行う：</p>
+
+      <div class="checklist">
+        <h4>💼 実務・成長関連（1〜4）</h4>
+        <ol>
+          <li><strong>1日の仕事の流れと、価値が出る瞬間は？</strong><br>
+          <small>→ 実際の業務内容とやりがいを理解</small></li>
+          <li><strong>新人が1年目で躓く点と乗り越え方は？</strong><br>
+          <small>→ リアルな課題と成長プロセスを把握</small></li>
+          <li><strong>評価は何で決まる？（行動/成果/協働）</strong><br>
+          <small>→ 昇進・昇格の実態を確認</small></li>
+          <li><strong>配属ガチャを減らす制度は？</strong><br>
+          <small>→ 希望と実際のミスマッチリスクを評価</small></li>
+        </ol>
+      </div>
+
+      <div class="checklist">
+        <h4>🎓 学習・キャリア関連（5〜7）</h4>
+        <ol start="5">
+          <li><strong>学び予算・時間・制度の実態は？</strong><br>
+          <small>→ 継続的な成長支援体制を確認</small></li>
+          <li><strong>異動・昇進の実例と平均年数は？</strong><br>
+          <small>→ キャリアパスの具体的なイメージを形成</small></li>
+          <li><strong>忙しさの波と理由（構造/一時要因）は？</strong><br>
+          <small>→ ワークライフバランスの実態を理解</small></li>
+        </ol>
+      </div>
+
+      <div class="checklist">
+        <h4>🏢 組織・文化関連（8〜10）</h4>
+        <ol start="8">
+          <li><strong>チームの心理的安全性を高める工夫は？</strong><br>
+          <small>→ 組織風土と働きやすさを評価</small></li>
+          <li><strong>最近の撤退・失敗案件と学びは？</strong><br>
+          <small>→ リスク管理と学習能力を確認</small></li>
+          <li><strong>自分の子に勧めるか？その理由は？</strong><br>
+          <small>→ 本音レベルでの企業評価を把握</small></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 5. 志望企業決定後の準備項目 -->
+    <div class="report-content page-break">
+      <h1>5. 志望企業決定後の準備項目</h1>
+
+      <h2>5.1 選考準備の4つの柱</h2>
+      <p>志望企業を決定した後は、以下の4項目を並行して進める：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>準備項目</th>
+            <th>具体的な作業内容</th>
+            <th>完了目安</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>①選考スケジュール管理</strong></td>
+            <td>併願戦略を一枚シートで可視化</td>
+            <td>エントリー前</td>
+          </tr>
+          <tr>
+            <td><strong>②志望理由・自己PR</strong></td>
+            <td>STAR法で論理的に言語化</td>
+            <td>ES提出1週間前</td>
+          </tr>
+          <tr>
+            <td><strong>③選考対策</strong></td>
+            <td>面接・適性・筆記の弱点補強</td>
+            <td>各選考の1週間前</td>
+          </tr>
+          <tr>
+            <td><strong>④内定後確認</strong></td>
+            <td>勤務条件確認と生活費試算</td>
+            <td>内定通知後即座</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5.2 STAR法による志望理由構築</h2>
+      <p>説得力のある志望理由作成には、STAR法（Situation, Task, Action, Result）を活用する：</p>
+
+      <div class="key-points">
+        <h4>📝 STAR法テンプレート</h4>
+        <ul>
+          <li><strong>Situation（状況）</strong>：どのような状況で、なぜその企業に興味を持ったか</li>
+          <li><strong>Task（課題）</strong>：その業界・企業が解決すべき課題をどう捉えているか</li>
+          <li><strong>Action（行動）</strong>：その課題解決に向けて自分が貢献できること</li>
+          <li><strong>Result（結果）</strong>：入社後に実現したい成果・成長ビジョン</li>
+        </ul>
+      </div>
+
+      <h2>5.3 内定後の条件確認項目</h2>
+      <div class="checklist">
+        <h4>✅ 確認必須項目</h4>
+        <ul>
+          <li>初任給の内訳（基本給、諸手当、みなし残業代）</li>
+          <li>勤務地と転勤の可能性・頻度</li>
+          <li>副業・兼業の可否と条件</li>
+          <li>有給取得率と実際の取得しやすさ</li>
+          <li>研修期間と配属スケジュール</li>
+          <li>試用期間の有無と条件</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6. 親子協働の進め方 -->
+    <div class="report-content page-break">
+      <h1>6. 親子協働の進め方</h1>
+
+      <h2>6.1 伴走ミーティングの設計</h2>
+      <p>親子間の効果的なコミュニケーションのため、<strong>週1回30分の定期ミーティング</strong>を設定する：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>アジェンダ項目</th>
+            <th>所要時間</th>
+            <th>確認内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>進捗確認</td>
+            <td>10分</td>
+            <td>前週のToDo完了状況、今週の予定</td>
+          </tr>
+          <tr>
+            <td>課題相談</td>
+            <td>15分</td>
+            <td>困っていること、判断に迷っていること</td>
+          </tr>
+          <tr>
+            <td>次週計画</td>
+            <td>5分</td>
+            <td>優先タスクの設定、親のサポート内容</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6.2 親のサポート範囲の明確化</h2>
+      
+      <div class="key-points">
+        <h4>✅ 推奨されるサポート</h4>
+        <ul>
+          <li>企業研究資料の整理・分析支援</li>
+          <li>エントリーシート（ES）の赤入れ・助言</li>
+          <li>面接練習の相手役</li>
+          <li>選考スケジュールの管理支援</li>
+          <li>交通費・スーツ代等の費用サポート</li>
+        </ul>
+      </div>
+
+      <div class="warning-box">
+        <h4>⚠️ 避けるべきサポート</h4>
+        <ul>
+          <li>ES・履歴書の代筆</li>
+          <li>企業への直接連絡</li>
+          <li>最終的な入社決定</li>
+          <li>面接への同行</li>
+          <li>内定辞退の連絡</li>
+        </ul>
+      </div>
+
+      <h2>6.3 共有ドキュメントの活用</h2>
+      <p>情報を整理し、認識を合わせるため、以下の項目を1枚のメモにまとめる：</p>
+
+      <div class="checklist">
+        <h4>📋 親子共有メモ項目</h4>
+        <ul>
+          <li><strong>目標業界・職種</strong>：現時点での第一志望と候補</li>
+          <li><strong>譲れない条件</strong>：絶対に妥協できない要素</li>
+          <li><strong>希望条件</strong>：できれば満たしたい要素</li>
+          <li><strong>親のサポート内容</strong>：具体的な支援項目</li>
+          <li><strong>決定権の所在</strong>：最終判断は本人が行うことの確認</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. よくある課題と対応策 -->
+    <div class="report-content page-break">
+      <h1>7. よくある課題と対応策</h1>
+
+      <h2>7.1 就活における典型的な不安</h2>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">65%</span>
+          <span class="stat-label">文系学生の不安</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">78%</span>
+          <span class="stat-label">大企業志向</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">43%</span>
+          <span class="stat-label">初任給重視</span>
+        </div>
+      </div>
+
+      <h2>7.2 不安への対応策</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>よくある不安</th>
+            <th>親世代の認識</th>
+            <th>現実的な対応策</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>文系は不利？</strong></td>
+            <td>理系有利の固定観念</td>
+            <td>職種起点の専門スキル強化で十分戦える</td>
+          </tr>
+          <tr>
+            <td><strong>大企業一択？</strong></td>
+            <td>安定性＝大企業規模</td>
+            <td>学びと越境機会は規模より"制度設計"次第</td>
+          </tr>
+          <tr>
+            <td><strong>初任給が全て？</strong></td>
+            <td>給与水準の絶対視</td>
+            <td>総合報酬＋成長機会＋市場性の3点で比較</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>7.3 世代間ギャップへの対処</h2>
+
+      <div class="key-points">
+        <h4>🔄 認識合わせのポイント</h4>
+        <ul>
+          <li><strong>働き方の変化</strong>：終身雇用前提から複数キャリア前提へ</li>
+          <li><strong>評価軸の更新</strong>：会社規模から成長機会・やりがいへ</li>
+          <li><strong>情報収集手法</strong>：人脈頼みからデジタル活用へ</li>
+          <li><strong>キャリア観</strong>：直線的昇進から多様なパス選択へ</li>
+        </ul>
+      </div>
+
+      <div class="summary-box">
+        <h4>💡 効果的なコミュニケーション手法</h4>
+        <p>世代間の認識ギャップを埋めるため、<strong>「なぜそう思うのか」の理由を互いに説明する</strong>ことを習慣化する。親は自身の経験を「参考情報」として提供し、子どもは現在の就活環境を「現状報告」として共有する。</p>
+      </div>
+    </div>
+
+    <!-- 付録 -->
+    <div class="report-content page-break">
+      <h1>付録：実践ツールとテンプレート</h1>
+
+      <h2>A1. 会社比較シートテンプレート</h2>
+      <p>Google スプレッドシートでの企業比較表を作成する際の推奨項目：</p>
+
+      <div class="checklist">
+        <h4>📊 比較項目（列項目）</h4>
+        <ul>
+          <li>基本情報（業界、従業員数、売上高、設立年）</li>
+          <li>事業内容（主力商品・サービス、収益源）</li>
+          <li>待遇（初任給、賞与、諸手当、福利厚生）</li>
+          <li>働き方（勤務時間、休日数、有給取得率、リモートワーク）</li>
+          <li>成長性（市場シェア、成長率、新規事業）</li>
+          <li>教育制度（研修期間、資格支援、キャリアパス）</li>
+          <li>企業文化（価値観、ダイバーシティ、社風）</li>
+          <li>立地・転勤（本社所在地、支社数、転勤頻度）</li>
+        </ul>
+      </div>
+
+      <h2>A2. OB/OG訪問記録テンプレート</h2>
+      <div class="key-points">
+        <h4>📝 記録項目</h4>
+        <ul>
+          <li><strong>基本情報</strong>：氏名、部署、入社年、連絡先</li>
+          <li><strong>質問と回答</strong>：事前質問10項目の記録</li>
+          <li><strong>印象・感想</strong>：人柄、話し方、企業への姿勢</li>
+          <li><strong>追加質問</strong>：会話中に浮かんだ疑問</li>
+          <li><strong>アクションアイテム</strong>：次に確認すべき事項</li>
+          <li><strong>総合評価</strong>：5段階での企業魅力度評価</li>
+        </ul>
+      </div>
+
+      <h2>A3. 選考スケジュール管理表</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>企業名</th>
+            <th>志望度</th>
+            <th>ES締切</th>
+            <th>一次面接</th>
+            <th>最終面接</th>
+            <th>内定通知</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A社</td>
+            <td>第一志望</td>
+            <td>3/15</td>
+            <td>4/10</td>
+            <td>4/25</td>
+            <td>5/1</td>
+            <td>OB訪問済</td>
+          </tr>
+          <tr>
+            <td>B社</td>
+            <td>第二志望</td>
+            <td>3/20</td>
+            <td>4/15</td>
+            <td>5/5</td>
+            <td>5/10</td>
+            <td>要インターン参加</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="summary-box">
+        <h4>🎯 次のステップ</h4>
+        <p>本レポートの内容を実践に移すため、まずは<strong>週1回の親子ミーティング</strong>から始めることを推奨する。Google スプレッドシートでの企業比較表作成、OB/OG訪問の計画立案を通じて、体系的な就活支援体制を構築していただきたい。</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 印刷ボタンの追加
+    document.addEventListener('DOMContentLoaded', function() {
+      const printButton = document.createElement('button');
+      printButton.textContent = '📄 レポートを印刷';
+      printButton.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+      `;
+      
+      printButton.addEventListener('click', function() {
+        window.print();
+      });
+      
+      document.body.appendChild(printButton);
+    });
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
